@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"*.html": "html",
+		"*.anm2": "xml"
+	}
+}
