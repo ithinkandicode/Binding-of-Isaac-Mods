@@ -182,7 +182,7 @@ values as ints, with each item giving +1 bonus value for that func
 ]]
 
 -- ACTIVE: explosive self damage potential (high bonus)
----@return int
+---@return integer
 function HDHH:GetSelfDamageActiveBonus()
 	local bonus     = 0
 	local player    = Isaac.GetPlayer(0)
@@ -204,7 +204,7 @@ function HDHH:GetSelfDamageActiveBonus()
 end
 
 -- ACTIVE: bomb-related (smaller bonus)
----@return int
+---@return integer
 function HDHH:GetActiveBonus()
 	local bonus     = 0
 	local player    = Isaac.GetPlayer(0)
@@ -227,7 +227,7 @@ end
 
 
 -- PASSIVE: explosive self-damage potential (high bonus)
----@return int
+---@return integer
 function HDHH:GetSelfDamagePassiveBonus()
 	local bonus  = 0
 	local player = Isaac.GetPlayer(0)
@@ -257,7 +257,7 @@ end
 
 
 -- PASSIVE: bomb-related (smaller bonus)
----@return int
+---@return integer
 function HDHH:GetPassiveBonus()
 	local bonus  = 0
 	local player = Isaac.GetPlayer(0)
@@ -274,12 +274,12 @@ end
 
 
 -- TRINKET: bomb-related
----@return int
+---@return integer
 function HDHH:GetTrinketBonus()
 	local bonus    = 0
 	local player   = Isaac.GetPlayer(0)
 	local trinket1 = player:GetTrinket(0)
-	local trinket1 = player:GetTrinket(1)
+	local trinket2 = player:GetTrinket(1)
 
 	-- Loop over items
 	for index, itemID in ipairs( ItemLists.trinkets ) do
@@ -293,7 +293,7 @@ end
 
 
 -- CARD: holding "The Tower"
----@return int
+---@return integer
 function HDHH:GetCardBonus()
 	local bonus  = 0
 	local player = Isaac.GetPlayer(0)
@@ -338,7 +338,7 @@ function HDHH:IfElse( check, ifTrue, ifFalse )
 end
 
 function HDHH:AddTrailingZeroes( num, minLength )
-	numStr = tostring( num )
+	local numStr = tostring( num )
 
 	while ( string.len( numStr ) < minLength ) do
 		numStr = numStr .. "0"
