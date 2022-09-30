@@ -14,7 +14,7 @@ HDHH.CONFIG = {
 	addItemBonus = true,  -- False if you don't want the bonus chance from items
 	alwaysDrop   = false, -- Sets the drop chance to 100%, forcing the Host Hat to always drop
 	debugLog     = true,  -- True to log to the debug console & log.txt
-	debugNewLine = false, -- Add newline when loggin to debug console, fixes merged lines when using Quick Kill debug
+	debugNewLine = false, -- Add newline when logging to debug console, fixes merged lines when using Quick Kill debug
 
 	--@todo:
 	onlySpawnOnce = false, -- Don't spawn if the player already has Host Hat
@@ -396,7 +396,7 @@ MCM (Mod Config Menu)
 -- HDHH.CONFIG.addItemBonus = true,  -- False if you don't want the bonus chance from items
 -- HDHH.CONFIG.alwaysDrop   = false, -- Sets the drop chance to 100%, forcing the Host Hat to always drop
 -- HDHH.CONFIG.debugLog     = true,  -- True to log to the debug console & log.txt
--- HDHH.CONFIG.debugNewLine = false, -- Add newline when loggin to debug console, fixes merged lines when using Quick Kill debug
+-- HDHH.CONFIG.debugNewLine = false, -- Add newline when logging to debug console, fixes merged lines when using Quick Kill debug
 
 if ModConfigMenu then
 	local modName = "Host Drops Host Hat";
@@ -417,7 +417,7 @@ if ModConfigMenu then
         Display = function()
             local toggle = "off";
             if HDHH.CONFIG.addItemBonus then
-                toggle = "ON";
+                toggle = "On";
             end
             return "Explosive items give bonus chance: " .. toggle;
         end,
