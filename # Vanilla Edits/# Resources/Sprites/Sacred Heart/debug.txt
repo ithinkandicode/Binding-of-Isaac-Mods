@@ -1,0 +1,13 @@
+C:\Users\darkl\Documents\My Games\Binding of Isaac Repentance\options.ini
+
+EnableDebugConsole=1
+
+
+Sacred Heart (edited)
+spawn 5.100.182
+
+Immaculate Heart
+spawn 5.100.573
+
+
+

@@ -1,0 +1,149 @@
+Gives Host a small chance to drop Host Hat.
+
+Base chance is [b]0.1%[/b] (1/1000). This scales with [b]Luck[/b]. 
+
+Items related to explosions also give a [b]bonus chance[/b], with potentially self-damaging items giving a bigger bonus.
+
+[h2]Objectives[/h2]
+The main goals of this mod are to:
+[list]
+[*]Make taking items that can damage you slightly less risky, and potentially more fun (eg. [i]Bob's Brain[/i], [i]Anarchist Cookbook[/i])
+[*]Add an extra element of strategy to your build, by choosing explosion-related trinkets, hanging on to [i]The Tower[/i] card, and acquiring even more risky items.
+[*]Give you a reason to kill Hosts that spawn from destroyed skulls, since in vanilla they're effectively pointless.
+[/list]
+
+[h2]Luck Scaling[/h2]
+The calculation is: [i]0.1 + ( LCK * 0.1 )[/i], so just 1 point of Luck doubles the chance. At 4 Luck, it's the same as the chance to get Dry/Ghost Baby from destroying a rock (0.5%).
+
+[table]
+[tr]
+    [th]Luck[/th]
+    [th]Bonus[/th]
+    [th]Total Chance[/th]
+    [th]Fraction[/th]
+[/tr]
+[tr]
+    [td]0[/td]
+    [td]-[/td]
+    [td]0.1%[/td]
+    [td]1/1000[/td]
+[/tr]
+[tr]
+    [td]1[/td]
+    [td]+0.1%[/td]
+    [td]0.2%[/td]
+    [td]1/500[/td]
+[/tr]
+[tr]
+    [td]4[/td]
+    [td]+0.4%[/td]
+    [td]0.5%[/td]
+    [td]1/200[/td]
+[/tr]
+[tr]
+    [td]5[/td]
+    [td]+0.5%[/td]
+    [td]0.6%[/td]
+    [td]3/500[/td]
+[/tr]
+[tr]
+    [td]10[/td]
+    [td]+1%[/td]
+    [td]1.1%[/td]
+    [td]~1/100[/td]
+[/tr]
+[tr]
+    [td]50[/td]
+    [td]+5%[/td]
+    [td]5.1%[/td]
+    [td]~1/20[/td]
+[/tr]
+[tr]
+    [td]99[/td]
+    [td]+9.9%[/td]
+    [td]10%[/td]
+    [td]1/10[/td]
+[/tr]
+[tr]
+    [td]500[/td]
+    [td]+50%[/td]
+    [td]50% (MAX)[/td]
+    [td]1/2[/td]
+[/tr]
+[/table]
+
+[h2]Item Bonuses[/h2]
+All items related to explosions and bombs give a bonus chance, [i]per item[/i].
+
+[i]ESD[/i] = Explosive Self-Damage potential. These items have a higher bonus, giving you a better chance when you need it the most.
+
+You can disable these bonuses by setting [i]addItemBonus[/i] to false in the mod's [i]main.lua[/i].
+
+[table]
+[tr]
+    [th]Group[/th]
+    [th]Bonus[/th]
+    [th]Items[/th]
+    [th]Notes[/th]
+[/tr]
+[tr]
+    [td]Active ESD[/td]
+    [td]2.5%[/td]
+    [td]Anarchist Cookbook, Kamikaze[/td]
+    [td]Bonus counts twice if you have 2 explosive actives (via Schoolbag)[/td]
+[/tr]
+[tr]
+    [td]Active[/td]
+    [td]1%[/td]
+    [td]Bob's Rotten Head, Remote Detonator, Mama Mega, Mr Boom[/td]
+    [td]Same as above[/td]
+[/tr]
+[tr]
+    [td]Passive ESD[/td]
+    [td]2%[/td]
+    [td]Dr. Fetus, Epic Fetus, Curse of the Tower, 
+Bob's Brain, Ipecac, Number Two, Rocket in a Jar[/td]
+    [td]Extra +2% bonus if you have My Reflection and either Dr. Fetus or Ipecac[/td]
+[/tr]
+[tr]
+    [td]Passive[/td]
+    [td]0.5%[/td]
+    [td][i]All other bomb passives[/i][/td]
+    [td]See the "Bomb Items" wiki category, linked below[/td]
+[/tr]
+[tr]
+    [td]Trinkets[/td]
+    [td]0.5%[/td]
+    [td]Blasting Cap, Bobs Bladder, Match Stick,
+Ring Cap, Safety Scissors, Short Fuse[/td]
+    [td]Only applies to held trinkets. 
+Bonus counts twice if you have 2 trinkets (via Mom's Purse/Belly Button)[/td]
+[/tr]
+[tr]
+    [td]Cards[/td]
+    [td]1%[/td]
+    [td]The Tower[/td]
+    [td]Bonus counts while the card is held. 
+Applied twice if you have 2 (via Starter Deck)[/td]
+[/tr]
+[/table]
+
+[h2]Modders[/h2]
+If you want to make a mod that does something similar (ie. make an enemy drop an item based on Luck/RNG), the main.lua file is heavily annotated. It also has an option to enable debug logging, which logs the RNG roll & drop chance after every Host kill, to both log.txt and the debug console.
+
+[h2]Related Mods[/h2]
+These mods by other creators provide other ways of gaining explosion immunity.
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1320457817]Bomb Boy Transformation[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=853287046]Better Transformations[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2513820185]Boom[/url] (Character)
+[/list]
+
+[h2]Wiki[/h2]
+[list]
+[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Host]Host[/url]
+[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Host_Hat]Host Hat[/url]
+[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Luck]Luck[/url]
+[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Rocks#Skulls]Rocks § Skulls[/url]
+[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Category:Bomb_items]Category:Bomb Items[/url]
+[/list]

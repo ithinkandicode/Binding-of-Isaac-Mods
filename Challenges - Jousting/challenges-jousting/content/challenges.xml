@@ -1,0 +1,36 @@
+<!--
+* https://bindingofisaacrebirth.fandom.com/wiki/Custom_Challenges
+*
+* name             = Name of the challenge; this will appear in the Custom Challenges menu screen
+* id               = Unique challenge ID (used for scripting)
+* startingitems    = Items that the player will receive; each item ID needs to be separated with a comma (no space)
+* startingtrinkets = Trinkets that the player will receive; each trinket ID needs to be separated with a comma (no space); adding more than 1 trinket requires Mom's Purse or similar
+* startingpill     = Effect ID of the starting pill (defaults to -1 which means no pill)
+* startingcard     = Card ID of the starting card (can also include runes and other card-like pickups); 0:none (default), -1:random
+* playertype       = ID of the player type
+* endstage         = The final stage of the challenge; this is where the trophy will appear
+* roomfilter       = List of room IDs to not be generated in the challenge (treasure: 4, shop: 2)
+* cursefilter      = Bitmask for curses that won't appear in the challenge
+* getcurse         = Bitmask for curses that will be forced all the time (same IDs as cursefilter)
+* achievements     = List of achievement IDs that are required to be able to play the challenge, separated with commas
+* canshoot         = if set to true the player will be blindfolded and unable to shoot
+* maxhp            = Adds a specified amount of red heart containers (uses half hearts as a measure so 1 full heart container is equal to 2)
+* redhp            = Fills a specified amount of red hearts  (uses half hearts as a measure so 1 full heart container is equal to 2) (does not add heart containers) (accepts negative numbers)
+* soulhp           = Adds a specified amount of soul hearts  (uses half hearts as a measure so 1 full heart container is equal to 2)
+* blackhp          = Adds a specified amount of black hearts (uses half hearts as a measure so 1 full heart container is equal to 2)
+* coins            = Adds a specified amount of coins
+* maxdamage        = Setting this to true will fix the player's damage to 100, preventing any damage-modifying items from affecting it
+* adddamage        = Modifies the player's damage by a specified amount
+* minfirerate      = Fixes the player's tear delay to a specified amount, preventing any tear-delay-modifying items from affecting it
+* minshotspeed     = Setting this to true will fix the player's shot speed to 1, preventing any shot-speed-modifying items from affecting it
+* bigrange         = If set to true, adds +10 range to the player
+* difficulty       = Game difficulty (0: normal, 1: hard)
+* altpath          = Alternative floor for light/dark path; false:Dark Room (default), true:Chest
+* megasatan        = Set to true to force the challenge to go to Mega Satan; this will also give the 2 Key Pieces required to open the door
+* secretpath       = Set to true to force the Repentance alt path; the player will still be required to manually collect the Knife Pieces
+-->
+
+<challenges version="1">
+	<challenge name="Jousting!"        startingitems="400,243,130,647,300" playertype="0" endstage="8" roomfilter="4,21" canshoot="false" difficulty="0" maxhp="-2"/>
+	<challenge name="Jousting! (Hard)" startingitems="400,181,647,300"     playertype="0" endstage="8" roomfilter="4,21" canshoot="false" difficulty="1" maxhp="-4"/>
+</challenges>

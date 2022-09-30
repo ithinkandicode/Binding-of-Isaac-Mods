@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Challenges: Easier Vanilla Challenges</name>
+    <directory>challenges-vanilla-easier</directory>
+    <id>0</id>
+    <description>Makes vanilla challenges easier. Currently only affects Solar System.</description>
+    <version>1.0</version>
+    <visibility>Public</visibility>
+    <tag id="Challenges"/>
+</metadata>

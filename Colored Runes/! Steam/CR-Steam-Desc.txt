@@ -1,0 +1,83 @@
+Makes vanilla rune sprites colored.
+
+[table]
+	[tr]
+		[td][img]https://i.imgur.com/nqE9Shw.png[/img][/td]
+		[td]Hagalaz[/td]
+		[td]Destroy breakables (rocks, pots)[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/3wXOzz6.png[/img][/td]
+		[td]Jera[/td]
+		[td]Duplicate pickups[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/2QgPAV5.png[/img][/td]
+		[td]Ehwaz[/td]
+		[td]Trapdoor/crawlspace[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/Th0Ksmq.png[/img][/td]
+		[td]Dagaz[/td]
+		[td]+2 soul hearts, remove curses[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/nII6b6V.png[/img][/td]
+		[td]Ansuz[/td]
+		[td]Reveal map[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/nlJPHaV.png[/img][/td]
+		[td]Perthro[/td]
+		[td]Reroll items (D6)[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/uSrKwbN.png[/img][/td]
+		[td]Berkano[/td]
+		[td]Summon blue flies & spiders[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/cxYxvPv.png[/img][/td]
+		[td]Algiz[/td]
+		[td]Shield for 20s[/td]
+	[/tr]
+[/table]
+
+Black Rune stays black, Blank Rune stays purple.
+
+[table]
+	[tr]
+		[td][img]https://i.imgur.com/gCPbU8W.png[/img][/td]
+		[td]Black[/td]
+		[td](Vanilla) 40 room dmg, turns pickups into spiders, turns pedestals into stats[/td]
+	[/tr]
+	[tr]
+		[td][img]https://i.imgur.com/62UXHHo.png[/img][/td]
+		[td]Blank[/td]
+		[td](Vanilla) Random rune effect[/td]
+	[/tr]
+[/table]
+
+Only affects runes on the ground, not held runes. If you know how to fix this without re-drawing the whole pocket item GUI, let me know (I've already done the HUD sprites, but the spritesheet can't just be swapped out because vanilla runes don't have separate sprites).
+
+Obviously this is a bit of a cheat in shops but I mainly made this as a QoL thing.
+
+Inspired by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2658081136]Visible Cards on the Floor[/url], and borrows some code from that mod.
+
+[h2]Related Mods[/h2]
+Other mods that do something similar, by making items more visible or adding extra color.
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2658081136]Visible Cards on the Floor[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2685050994]cHUDpentance Lite[/url] †
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2621627112]Colored Menu Item+Boss Icons[/url] †
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497457026]ColoredCurses[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2283084392]Colored Loading Images[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=863091856]Color Zodiac[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2696067052]Mike's Character Portraits [Colored][/url]
+[/list]
+† These two do effectively the same thing.
+
+[h2]Wiki[/h2]
+[list]
+	[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Cards_and_Runes#Left_Pointing_Runes]Cards and Runes[/url]
+[/list]

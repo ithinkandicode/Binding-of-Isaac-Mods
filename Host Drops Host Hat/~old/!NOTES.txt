@@ -1,0 +1,32 @@
+-- Host Hat ID: 375
+-- COLLECTIBLE_HOST_HAT
+-- https://bindingofisaacrebirth.fandom.com/wiki/Host_Hat
+
+-- Host entity ID: 27.0
+
+
+
+	-----------------------------------
+	--OLD STUFF
+    --local rng = RNG()
+    --rng:SetSeed(seed, 0)
+
+	--local itemChance = rng:RandomInt()
+	--via:https://bindingofisaacrebirth.fandom.com/wiki/Room_Clear_Awards
+	--(RandomFloat * Luck * 0.1) + pickupPercent
+
+	--RandomFloat: Number between 0-1
+	-----------------------------------
+
+	--local hostHatID = 375
+--
+	--local rng = NPC:GetDropRNG()
+	--local randomFloat = rng:RandomFloat() --random number between 0 and 1
+--
+	--if randomFloat <= 0.5 --50% chance
+	--	Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, hostHatID, NPC.Position, Vector(0, 0), nil)
+	--else
+	--	Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, hostHatID, NPC.Position, Vector(0, 0), nil)
+	--end
+
+

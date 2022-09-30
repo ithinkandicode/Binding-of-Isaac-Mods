@@ -1,0 +1,183 @@
+
+- [x] 1-Hagalaz
+- [x] 2-Jera
+- [x] 3-Ehwax
+- [x] 4-Dagaz
+- [x] 5-Ansuz
+- [x] 6-Perthro
+- [x] 7-Berkano
+- [x] 8-Algiz
+
+1 - Hagalaz
+2 - Jera
+3 - Ehwax
+4 - Dagaz
+
+5 - Ansuz
+6 - Perthro
+7 - Berkano
+8 - Algiz
+
+---
+
+LARGE 1
+
+LARGE 2
+w/h: 30/30
+x/y: crop
+
+IDLE (X/Y):
+Hagalaz: 143/31
+Jera:    175
+Ehwaz:   207
+Dagaz:   239
+
+Ansuz:   149/65 - position-x/y:6/1
+Perthro: 181
+Berkano: 213
+Algiz:   245
+
+
+COLLECT/APPEAR (X/Y):
+Hagalaz: 145/33
+Jera:    177
+Ehwaz:   209
+Dagaz:   241
+
+Ansuz:   149/65
+Perthro: 181
+Berkano: 213
+Algiz:   245
+
+
+HUD:
+Hagalaz: 0/31
+Jera:    32
+Ehwaz:   64
+Dagaz:   96
+
+Ansuz:   0/63
+Perthro: 32
+Berkano: 64
+Algiz:   96
+
+
+HUDSMALL:
+Hagalaz: 4/100
+Jera:    36
+Ehwaz:   68
+Dagaz:   100
+
+Ansuz:   8/135
+Perthro: 40
+Berkano: 72
+Algiz:   104
+
+
+--
+Hagalaz:
+145/33
+33
+30/30
+
+- [x] 1-Hagalaz
+- [x] 2-Jera
+- [x] 3-Ehwax
+- [x] 4-Dagaz
+- [ ] 5-Ansuz
+- [ ] 6-Perthro
+- [ ] 7-Berkano
+- [ ] 8-Algiz
+
+1 - Hagalaz
+2 - Jera
+3 - Ehwax
+4 - Dagaz
+
+5 - Ansuz
+6 - Perthro
+7 - Berkano
+8 - Algiz
+
+---
+
+LARGE 1
+
+LARGE 2
+w/h: 30/30
+x/y: crop
+
+IDLE (X/Y):
+Hagalaz: 143/31
+Jera:    175
+Ehwaz:   207
+Dagaz:   239
+
+Ansuz:   149/65 - position-x/y:6/1
+Perthro: 181
+Berkano: 213
+Algiz:   245
+
+
+COLLECT/APPEAR (X/Y):
+Hagalaz: 145/33
+Jera:    177
+Ehwaz:   209
+Dagaz:   241
+
+Ansuz:   149/65
+Perthro: 181
+Berkano: 213
+Algiz:   245
+
+
+HUD:
+Hagalaz: 0/31
+Jera:    32
+Ehwaz:   64
+Dagaz:   96
+
+Ansuz:   0/63
+Perthro: 32
+Berkano: 64
+Algiz:   96
+
+
+HUDSMALL:
+Hagalaz: 4/100
+Jera:    36
+Ehwaz:   68
+Dagaz:   100
+
+Ansuz:   8/135
+Perthro: 40
+Berkano: 72
+Algiz:   104
+
+
+--
+Hagalaz:
+145/33
+33
+30/30
+
+
+
+~~~
+
+
+GLOW:
+
+1-Hagalaz
+CROP:X/Y = 135/97
+WIDTH/H  = 32/32
+
+1 - Crop: 135/97
+2 - Crop: 173/97 (+38)
+3 - Crop: 211/97
+4 - Crop: 249/97
+
+5 - Crop: 135/135
+6 - Crop: 173/135 (+38)
+7 - Crop: 211/135
+8 - Crop: 249/135

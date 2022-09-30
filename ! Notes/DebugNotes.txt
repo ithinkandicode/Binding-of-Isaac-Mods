@@ -1,0 +1,21 @@
+spawn 27.0
+repeat 10
+
+--
+
+debug 3 – Full invulnerability.
+debug 4 – +40 damage to the hero’s tears.
+debug 9 – Luck becomes 50.
+
+---
+
+VN2N QP60
+giveitem ipec
+
+---
+
+EnableDebugConsole=1
+
+UK Key: '
+
+"C:\Users\darkl\Documents\My Games\Binding of Isaac Repentance\options.ini"

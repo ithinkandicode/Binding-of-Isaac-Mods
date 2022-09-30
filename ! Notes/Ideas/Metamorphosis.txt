@@ -1,0 +1,15 @@
+https://www.reddit.com/r/themoddingofisaac/comments/olpbpv/im_thinking_about_creating_a_new_mod_over_this/
+
+**Metamorphosis:** An item themed around the metamorphosis of a butterfly, and the various stages it goes through (egg, larva, pupa, and adult).
+
+Isaac's metamorphosis state is increased at the start of each new stage.
+
+***State 1 - Egg:*** All stats down. Isaac's body is removed, and his head gains an appearance similar to Cone Head. Size down x3. Speed is capped at 0.7.
+
+***State 2 - Larva (Caterpillar):*** Isaac's head appearance is reset. He gains a caterpillar-like body. Every 5 kills, Isaac sheds his skin (once per room). This increases his size by x1 (up to x3), and leaves behind a static, pale copy of the smaller Isaac, which functions like the Punching Bag. Speed is capped at 0.8.
+
+***State 3 - Pupa (Chrysalis):*** Isaac appearance becomes similar to Gnawed Leaf, but tinted green. His stats increase slightly after every room clear, with a fixed max based on his stats when he collected Metamorphosis (this might be too complicated though).
+
+***State 4 - Adult (Butterfly):*** Isaac gains flight with coloured wings which leave a slowing trail of sparkles. He gains a min speed of 1.6 (similar to A Pony/White Pony). High chance to shoot poison tears. Placed bombs are replaced with eggs, which spawn a Minisaac after exploding (similar to Giant Cell).
+
+Feel free to change whatever you like.

@@ -1,0 +1,4 @@
+Isaac.DebugString( debugMsg )
+Isaac.ConsoleOutput( debugNewLine .. debugMsg ) -- same as print()
+
+luamod colored-runes

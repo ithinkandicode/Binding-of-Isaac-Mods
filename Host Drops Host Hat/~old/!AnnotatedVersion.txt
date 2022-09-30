@@ -1,0 +1,80 @@
+local Mod = RegisterMod("Host Drops Host Hat", 1)
+local game = Game()
+
+-- Host Hat ID: 375
+-- https://bindingofisaacrebirth.fandom.com/wiki/Host_Hat
+
+-- luamod host-drops-host-hat
+-- Isaac.DebugString("Encyclopedia: Finished loading! Version ".. Encyclopedia.VERSION)
+
+-- DEBUG: Invincible/+50 Luck/Quick Kill
+-- debug 3
+-- debug 9
+-- debug 10
+
+-- DEBUG: Spawn Host
+-- spawn 27.0
+
+-- external item descriptions_836319872/*,encyclopedia_2376005362/*
+
+function Mod:SpawnItem(NPC)
+
+	-----------------------------------
+	--OLD STUFF
+    --local rng = RNG()
+    --rng:SetSeed(seed, 0)
+
+	--local itemChance = rng:RandomInt()
+	--via:https://bindingofisaacrebirth.fandom.com/wiki/Room_Clear_Awards
+	--(RandomFloat * Luck * 0.1) + pickupPercent
+
+	--RandomFloat: Number between 0-1
+	-----------------------------------
+	
+	local debugLog = true
+
+	local hostHatID = 375
+
+	local rng = NPC:GetDropRNG()
+	local randomFloat = rng:RandomFloat() --random number between 0 and 1
+	
+	local player = Isaac.GetPlayer(0)
+	
+	-- Base chance: 00.1% (1/1000)
+	local baseDropChance = 0.001
+	
+	-- Add luck modifier (1 LCK = +00.1% chance)
+	-- 10 Luck = 0.1% chance
+	-- 100 Luck = 1% chance
+	-- 500 Luck = 50% chance (max)
+	local luckMod = player.Luck * 0.001
+	
+	-- DROP CHANCE (base + luck)
+	local dropChance = baseDropChance + luckMod
+	
+	-- Cap at 50% chance
+	if ( dropChance > 0.5 ) then
+		dropChance = 0.5
+	end
+
+	--if ( randomFloat <= 0.999 ) then --99.9% chance
+	--if ( randomFloat <= 0.1 ) then --10% chance
+	if ( randomFloat <= dropChance ) then
+		
+		if ( debugLog ) then
+			Isaac.DebugString("HostHat: SUCCESS (chance: "..dropChance..", rolled: "..randomFloat..")")
+			print("HostHat: SUCCESS (chance: "..dropChance..", rolled: "..randomFloat..")")
+		end
+		
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, hostHatID, NPC.Position, Vector(0, 0), nil)
+	else
+		if ( debugLog ) then
+			Isaac.DebugString("HostHat: FAIL (chance: "..dropChance..", rolled: "..randomFloat..")")
+			print("HostHat: FAIL (chance: "..dropChance..", rolled: "..randomFloat..")")
+		end
+	end
+	
+	--Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, 375, NPC.Position, Vector(0, 0), nil)
+end
+
+Mod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, Mod.SpawnItem, EntityType.ENTITY_HOST)

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Items: Rename ??? Pill to ?????</name>
+    <directory>items-rename-pills</directory>
+    <description>Rename the ??? pill (Curse of the Maze) to ?????.</description>
+    <version>1.0</version>
+    <visibility>Public</visibility>
+    <tag id="Challenges"/>
+</metadata>

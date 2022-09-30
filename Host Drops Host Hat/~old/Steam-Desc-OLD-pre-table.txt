@@ -1,0 +1,23 @@
+Gives Host a [i]very[/i] small chance to drop Host Hat.
+
+Base chance is 0.01% (1/10000).
+
+Strong scaling with Luck:
+[list]
+[*]1 LCK: +0.01% chance (0.02% total - 1/5000)
+[*]10 LCK: +0.1% chance (0.11% total - 1/1000)
+[*]100 LCK: +1% chance (1.01% total - 1/100)
+[*]5000 LCK: +50% chance (MAX - 1/2)
+[/list]
+Final calculation: 0.01 + ( LCK * 0.01 ). So just 1 point of luck doubles the chance.
+
+[h2]Notes[/h2]
+The base drop chance might need tweaking. Getting the drop depends on how often you kill hosts when you don't need to (eg. spawned from skulls), and the low drop rate means casual players might never see it.
+
+If you want to make a mod that does something similar, the main.lua file is heavily annotated and has local options for debug logging.
+
+[h2]Wiki Links[/h2]
+[list]
+[*]https://bindingofisaacrebirth.fandom.com/wiki/Host
+[*]https://bindingofisaacrebirth.fandom.com/wiki/Host_Hat
+[/list]
