@@ -5,6 +5,7 @@
         "c:\\Users\\darkl\\.vscode\\extensions\\filloax.isaac-lua-api-vscode-1.3.6\\out\\emmylua"
     ],
     "diagnostics.globals": [
+        "ModConfigMenu",
         "ActionTriggers",
         "ActiveSlot",
         "BabySubType",

@@ -8,11 +8,16 @@ local json = require("json") -- needed for options save/load
 -- @todo: Support for Mod Config Menu
 -- @todo: Add EID bonus drop chances
 
+-- host-drops-host-hat_2866530077
+
 HDHH.CONFIG = {
-	addItemBonus = true, -- False if you don't want the bonus chance from items
-	debugLog     = true, -- True to log to the debug console & log.txt
-	debugNewLine = false, -- Add newline when loggin to debug console, fixes merged lines when using Quick Kill debug
+	addItemBonus = true,  -- False if you don't want the bonus chance from items
 	alwaysDrop   = false, -- Sets the drop chance to 100%, forcing the Host Hat to always drop
+	debugLog     = true,  -- True to log to the debug console & log.txt
+	debugNewLine = false, -- Add newline when loggin to debug console, fixes merged lines when using Quick Kill debug
+
+	--@todo:
+	onlySpawnOnce = false, -- Don't spawn if the player already has Host Hat
 }
 
 HDHH.MULTIPLIERS = {
@@ -23,7 +28,7 @@ HDHH.MULTIPLIERS = {
 	-- ESD = Explosive self-damage potential
 	dmgActive  = 2.5, -- Actives ESD / Kamikaze, Anarchist Cookbook
 	active     = 1.0, -- Actives     / Mr Boom, Bob's Rotten Head, Remote Detonator, Mama Mega
-	dmgPassive = 2.0, -- Passive ESD / Dr. Fetus, Epic Fetus, Curse of the Tower, Bob's Brain, Number Two, Rocket in a Jar (bonus for Dr. Fetus + My Reflection)
+	dmgPassive = 2.0, -- Passive ESD / Dr. Fetus, Epic Fetus, Curse of the Tower, Bob's Brain, Number Two, Rocket in a Jar, Ipecac (bonus for Dr. Fetus + My Reflection)
 	passive    = 0.5, -- Passives    / (All other bomb items)
 	trinket    = 0.5, -- Trinkets    / Blasting Cap, Match Stick, Ring Cap, Safety Scissors, Short Fuse, Bobs Bladder
 	card       = 1.0, -- Cards       / The Tower
@@ -376,6 +381,58 @@ end
 function HDHH:preGameExit( shouldSave )
   local jsonString = json.encode( HDHH.CONFIG )
   HDHH:SaveData( jsonString )
+end
+
+
+--[[
+MCM (Mod Config Menu)
+=============================================================================
+]]
+
+-- Docs: https://github.com/Zamiell/isaac-mod-config-menu
+-- Reference: extra scared hearts_2559137447/esh_mcm.lua
+-- Reference: extra scared hearts_2559137447/main.lua
+
+-- HDHH.CONFIG.addItemBonus = true,  -- False if you don't want the bonus chance from items
+-- HDHH.CONFIG.alwaysDrop   = false, -- Sets the drop chance to 100%, forcing the Host Hat to always drop
+-- HDHH.CONFIG.debugLog     = true,  -- True to log to the debug console & log.txt
+-- HDHH.CONFIG.debugNewLine = false, -- Add newline when loggin to debug console, fixes merged lines when using Quick Kill debug
+
+if ModConfigMenu then
+	local modName = "Host Drops Host Hat";
+
+	-- Add a tab for this mod
+    ModConfigMenu.UpdateCategory(modName, {
+		Info = {
+			"View settings for " .. modName .. ".",
+		}
+	});
+
+	-- Add option: addItemBonus
+    ModConfigMenu.AddSetting(modName, "Settings", {
+        Type = ModConfigMenu.OptionType.BOOLEAN,
+        CurrentSetting = function()
+            return HDHH.CONFIG.addItemBonus;
+        end,
+        Display = function()
+            local toggle = "off";
+            if HDHH.CONFIG.addItemBonus then
+                toggle = "ON";
+            end
+            return "Explosive items give bonus chance: " .. toggle;
+        end,
+        OnChange = function(currentBool)
+            HDHH.CONFIG.addItemBonus = currentBool;
+            --HDHH:UNUSED_OnSettingsChange(); -- func does not exist atm, here for future ref
+        end,
+        Info = function()
+            if HDHH.CONFIG.addItemBonus then
+                return "ON: Explosive items give you a bonus chance";
+            else
+				return "OFF: No bonus from items";
+            end
+        end
+    });
 end
 
 
