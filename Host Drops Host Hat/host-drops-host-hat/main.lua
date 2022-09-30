@@ -1,6 +1,7 @@
 local HDHH = RegisterMod("Host Drops Host Hat", 1)
 local game = Game()
 local ItemLists = require("itemLists.lua") -- lists of items to loop over
+local json = require("json") -- needed for options save/load
 -- local EIDUpdates = require("eidUpdates.lua") -- all EID stuff is handled in here
 
 -- @todo: Only spawn ONCE?
@@ -320,10 +321,14 @@ UTILITY
 =============================================================================
 ]]
 
+---@param number   integer  The integer to round
+---@param decimals integer  Number of decimal places required
+---@return integer
 function HDHH:Round( number, decimals )
     local power = 10^decimals
     return math.floor(number * power) / power
 end
+
 
 function HDHH:IfElse( check, ifTrue, ifFalse )
 	if ( check == nil ) then
@@ -337,8 +342,14 @@ function HDHH:IfElse( check, ifTrue, ifFalse )
 	end
 end
 
-function HDHH:AddTrailingZeroes( num, minLength )
-	local numStr = tostring( num )
+
+-- Add a trailing zeros to a number
+-- Warning: Converts integer to string
+---@param number    integer  The integer to add trailing zeros to
+---@param minLength integer  Minimum int string length, zeros are added if it is below this
+---@return string
+function HDHH:AddTrailingZeroes( number, minLength )
+	local numStr = tostring( number )
 
 	while ( string.len( numStr ) < minLength ) do
 		numStr = numStr .. "0"
@@ -349,9 +360,38 @@ end
 
 
 --[[
-START
+SETTINGS
 =============================================================================
 ]]
 
+---@param isContinued boolean True if started from a savestate
+function HDHH:OnGameStart( isContinued )
+    --Loading moddata
+    if HDHH:HasData() then
+        HDHH.CONFIG = json.decode( HDHH:LoadData() )
+    end
+end
+
+
+function HDHH:preGameExit( shouldSave )
+  local jsonString = json.encode( HDHH.CONFIG )
+  HDHH:SaveData( jsonString )
+end
+
+
+
+--[[
+INIT
+=============================================================================
+]]
+
+-- https://moddingofisaac.com/docs/rep/enums/ModCallbacks.html
+
 -- On Host death
 HDHH:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, HDHH.MaybeSpawnItem, EntityType.ENTITY_HOST)
+
+-- Load settings
+HDHH:AddCallback( ModCallbacks.MC_POST_GAME_STARTED, HDHH.OnGameStart )
+
+-- Save setting
+HDHH:AddCallback( ModCallbacks.MC_PRE_GAME_EXIT, HDHH.preGameExit )
