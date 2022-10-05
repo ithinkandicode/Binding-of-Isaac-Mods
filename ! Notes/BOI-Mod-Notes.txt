@@ -2,3 +2,8 @@ Isaac.DebugString( debugMsg )
 Isaac.ConsoleOutput( debugNewLine .. debugMsg ) -- same as print()
 
 luamod colored-runes
+
+~~~
+
+-- Use Joker card
+lua Isaac.GetPlayer(0):UseCard( 31 )

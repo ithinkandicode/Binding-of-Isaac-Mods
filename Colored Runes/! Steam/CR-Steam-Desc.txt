@@ -2,14 +2,14 @@ Makes vanilla rune sprites colored.
 
 [table]
 	[tr]
-		[td][img]https://i.imgur.com/nqE9Shw.png[/img][/td]
+		[td][img]https://i.imgur.com/CKoFnUk.png[/img][/td]
 		[td]Hagalaz[/td]
-		[td]Destroy breakables (rocks, pots)[/td]
+		[td]Destroy breakables (rocks, pots, skulls)[/td]
 	[/tr]
 	[tr]
-		[td][img]https://i.imgur.com/3wXOzz6.png[/img][/td]
+		[td][img]https://i.imgur.com/lh4qLEx.png[/img][/td]
 		[td]Jera[/td]
-		[td]Duplicate pickups[/td]
+		[td]Duplicate pickups/chests[/td]
 	[/tr]
 	[tr]
 		[td][img]https://i.imgur.com/2QgPAV5.png[/img][/td]
@@ -17,9 +17,9 @@ Makes vanilla rune sprites colored.
 		[td]Trapdoor/crawlspace[/td]
 	[/tr]
 	[tr]
-		[td][img]https://i.imgur.com/Th0Ksmq.png[/img][/td]
+		[td][img]https://i.imgur.com/VkzvPNs.png[/img][/td]
 		[td]Dagaz[/td]
-		[td]+2 soul hearts, remove curses[/td]
+		[td]+1 soul heart, remove curses[/td]
 	[/tr]
 	[tr]
 		[td][img]https://i.imgur.com/nII6b6V.png[/img][/td]
@@ -29,7 +29,7 @@ Makes vanilla rune sprites colored.
 	[tr]
 		[td][img]https://i.imgur.com/nlJPHaV.png[/img][/td]
 		[td]Perthro[/td]
-		[td]Reroll items (D6)[/td]
+		[td]Reroll pedastals (D6)[/td]
 	[/tr]
 	[tr]
 		[td][img]https://i.imgur.com/uSrKwbN.png[/img][/td]
@@ -37,7 +37,7 @@ Makes vanilla rune sprites colored.
 		[td]Summon blue flies & spiders[/td]
 	[/tr]
 	[tr]
-		[td][img]https://i.imgur.com/cxYxvPv.png[/img][/td]
+		[td][img]https://i.imgur.com/ibB2Koh.png[/img][/td]
 		[td]Algiz[/td]
 		[td]Shield for 20s[/td]
 	[/tr]
@@ -58,7 +58,7 @@ Black Rune stays black, Blank Rune stays purple.
 	[/tr]
 [/table]
 
-Only affects runes on the ground, not held runes. If you know how to fix this without re-drawing the whole pocket item GUI, let me know (I've already done the HUD sprites, but the spritesheet can't just be swapped out because vanilla runes don't have separate sprites).
+Only affects [b]runes on the ground[/b], not held runes. Changing the held icon would mean replacing the vanilla runes with custom versions (eg. like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2848704602]this mod[/url] does, with "Morph"), but I'm hesitant to do that because I don't know exactly what the repurcusions might be, particularly how it might affect compatibility with other mods. So the approach I've taken here should be highly compatible and future-proof.
 
 Obviously this is a bit of a cheat in shops but I mainly made this as a QoL thing.
 
@@ -68,16 +68,18 @@ Inspired by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=26580811
 Other mods that do something similar, by making items more visible or adding extra color.
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2658081136]Visible Cards on the Floor[/url]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2685050994]cHUDpentance Lite[/url] †
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2621627112]Colored Menu Item+Boss Icons[/url] †
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2783072644]Colored Achievement Descriptions[/url]
+[*]† [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2685050994]cHUDpentance Lite[/url]
+[*]† [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2621627112]Colored Menu Item+Boss Icons[/url]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497457026]ColoredCurses[/url]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2283084392]Colored Loading Images[/url]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=863091856]Color Zodiac[/url]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2696067052]Mike's Character Portraits [Colored][/url]
+[*]‡ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2039606521]Better Accurate Character Stats[/url]
+[*]‡ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2696067052]Mike's Character Portraits [Colored][/url]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2627014611]Repentance Plus[/url] (Black rune resprite, among a ton of other changes)
 [/list]
-† These two do effectively the same thing.
+†‡ These effectively the same thing, only use one at a time
 
-[h2]Wiki[/h2]
-[list]
-	[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Cards_and_Runes#Left_Pointing_Runes]Cards and Runes[/url]
-[/list]
+[h2]Misc[/h2]
+[*][url=https://bindingofisaacrebirth.fandom.com/wiki/Cards_and_Runes#Runes]Wiki: Cards and Runes[/url]
+[*][url=https://github.com/ithinkandicode/Binding-of-Isaac-Mods]Github repo for my mods[/url]
