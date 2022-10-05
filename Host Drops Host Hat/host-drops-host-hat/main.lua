@@ -18,6 +18,7 @@ HDHH.CONFIG = {
 
 	--@todo:
 	onlySpawnOnce = false, -- Don't spawn if the player already has Host Hat
+	onlySpawnInClearedRoom = false, -- Can only spawn after the room has been cleared
 }
 
 HDHH.MULTIPLIERS = {
@@ -63,7 +64,7 @@ DROP CHANCE
 ]]
 
 ---@param NPC Entity
----@return boolean
+---@return boolean True if the Host Hat should drop
 function HDHH:CanDrop( NPC )
 	local willDrop     = false
 	local rng          = NPC:GetDropRNG()
@@ -92,14 +93,11 @@ function HDHH:CanDrop( NPC )
 		local debugNewLine = HDHH:IfElse( HDHH.CONFIG.debugNewLine, "\n", "" )
 		local bonusStr     = string.format( "(+%s)", HDHH:GetBonusChance() )
 
-		-- Add 0 for alignment
+		-- Add 0(s) for alignment
 		rngRoundStr = HDHH:AddTrailingZeroes( rngRoundStr, 6 )
-		-- rngRoundStr = HDHH:IfElse( string.len( rngRoundStr) < 4, rngRoundStr .. "0", rngRoundStr )
-		-- rngRoundStr = HDHH:IfElse( string.len( rngRoundStr) < 5, rngRoundStr .. "0", rngRoundStr )
-		-- rngRoundStr = HDHH:IfElse( string.len( rngRoundStr) < 6, rngRoundStr .. "0", rngRoundStr )
 
-		-- Hide bonus chance if disabled
-		bonusStr    = HDHH:IfElse( HDHH.CONFIG.addItemBonus, bonusStr, "" )
+		-- Hide bonus chance if it's disabled
+		bonusStr = HDHH:IfElse( HDHH.CONFIG.addItemBonus, bonusStr, "" )
 
 		debugMsg = string.format(
 			-- Example: "Host: NO, rng/chance(bonus)= 0.4713 > 0.001 (+0.0)"
@@ -119,7 +117,10 @@ function HDHH:CanDrop( NPC )
 end
 
 
--- Returns a chance object, with: dropChance, luckMod, bonusChance
+-- Returns a chance object, all values are % floats:
+--   dropChance:  Final calculated chance to drop
+--   luckMod:     Bonus % chance from current Luck stat
+--   bonusChance: Bonus % chance from items (actives, passives, trinkets, Tower card)
 function HDHH:GetDropChance()
 	local player = Isaac.GetPlayer(0)
 
@@ -152,8 +153,8 @@ function HDHH:GetDropChance()
 	end
 
 	local chanceObj = {
-		dropChance = dropChance,
-		luckMod = luckMod,
+		dropChance  = dropChance,
+		luckMod     = luckMod,
 		bonusChance = bonusChance
 	}
 
@@ -326,8 +327,9 @@ UTILITY
 =============================================================================
 ]]
 
+-- Round an int down to a specific number of decimal places
 ---@param number   integer  The integer to round
----@param decimals integer  Number of decimal places required
+---@param decimals integer  Number of decimal places required (eg. 2)
 ---@return integer
 function HDHH:Round( number, decimals )
     local power = 10^decimals
@@ -335,6 +337,7 @@ function HDHH:Round( number, decimals )
 end
 
 
+-- Shorthand replacement for ternary operator, which Lua doesn't support
 function HDHH:IfElse( check, ifTrue, ifFalse )
 	if ( check == nil ) then
 		return ifFalse
@@ -350,8 +353,8 @@ end
 
 -- Add a trailing zeros to a number
 -- Warning: Converts integer to string
----@param number    integer  The integer to add trailing zeros to
----@param minLength integer  Minimum int string length, zeros are added if it is below this
+---@param number    integer|string  The integer to add trailing zeros to, also accepts a string
+---@param minLength integer         Minimum int string length, zeros are added if it is below this
 ---@return string
 function HDHH:AddTrailingZeroes( number, minLength )
 	local numStr = tostring( number )

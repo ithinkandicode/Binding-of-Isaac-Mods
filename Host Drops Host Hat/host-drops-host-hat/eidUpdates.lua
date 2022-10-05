@@ -29,7 +29,7 @@ if EID then
 
 			-- CARD
 			elseif ( descObj.ObjVariant == PickupVariant.PICKUP_TAROTCARD ) then -- 300
-				if ( descObj.ObjSubType == Card.CARD_TOWER ) --@todo: temp test
+				if ( descObj.ObjSubType == Card.CARD_TOWER ) then --@todo: temp test
 					return true
 				end
 			end
@@ -50,7 +50,7 @@ if EID then
 		-- itemSubType = tostring(itemSubType)
 		-- local bonusDesc = trinketInfo[itemSubType].Desc
 
-		local list = ItemLists[eidCards]
+		local list = ItemLists.eidCards
 		local bonusDesc = list[itemSubType].Desc
 		EID:appendToDescription(descObj, bonusDesc)
 
@@ -61,4 +61,4 @@ if EID then
 	EID:addDescriptionModifier("Host Drops Host Hat", myModifierCondition, myModifierCallback)
 end
 
-return EIDUpdates
+-- return EIDUpdates
